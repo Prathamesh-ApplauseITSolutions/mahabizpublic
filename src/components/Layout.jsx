@@ -14,9 +14,9 @@ import {
   ChevronRight,
   Send
 } from 'lucide-react'
-import mahabizLogo from '../assets/images/mahabiz_logo.png'
-import mahabizLogoWhite from '../assets/images/white_transparent.png'
-import mahabizLogoDark from '../assets/images/mahabiz_logo_darkmode.png'
+const mahabizLogo = new URL('../assets/images/mahabiz_logo.png', import.meta.url).href
+const mahabizLogoWhite = new URL('../assets/images/white_transparent.png', import.meta.url).href
+const mahabizLogoDark = new URL('../assets/images/mahabiz_logo_darkmode.png', import.meta.url).href
 
 export const Layout = ({ children }) => {
   const { theme, toggleTheme } = useAppStore()
