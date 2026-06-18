@@ -16,6 +16,7 @@ import {
 } from 'lucide-react'
 import mahabizLogo from '../assets/images/mahabiz_logo.png'
 import mahabizLogoWhite from '../assets/images/white_transparent.png'
+import mahabizLogoDark from '../assets/images/mahabiz_logo_darkmode.png'
 
 export const Layout = ({ children }) => {
   const { theme, toggleTheme } = useAppStore()
@@ -92,7 +93,7 @@ export const Layout = ({ children }) => {
 
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group">
-            <img src={mahabizLogo} alt="MahaBiz Connect logo" className="w-16 h-16 sm:w-20 sm:h-20 object-contain" />
+            <img src={theme === 'dark' ? mahabizLogoDark : mahabizLogo} alt="MahaBiz Connect logo" className="w-16 h-16 sm:w-20 sm:h-20 object-contain" />
             <div className="flex flex-col">
               <span className="font-bold text-base sm:text-lg leading-tight text-primary dark:text-white tracking-wide whitespace-nowrap">
                 MahaBiz<span className="text-secondary">Connect</span>
