@@ -160,7 +160,7 @@ export const Home = () => {
                 to="/apply/consultation"
                 className="w-full sm:w-auto px-4 py-3 sm:px-8 sm:py-4 rounded-xl sm:rounded-2xl text-sm sm:text-base font-bold text-secondary dark:text-secondary-light hover:text-white bg-secondary/10 dark:bg-secondary/15 hover:bg-secondary transition-all text-center whitespace-nowrap"
               >
-                Book Consultation..
+                Book Consultation
               </Link>
             </div>
           </div>
