@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Sora:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #0B2E59;
+  --color-primary-dark: #071D3A;
+  --color-primary-light: #123C73;
+  --color-secondary: #FF6B00;
+  --color-secondary-dark: #D45900;
+  --color-secondary-light: #FF8933;
+  --color-accent: #FFC857;
+  --color-accent-dark: #E6B03C;
+  --color-accent-light: #FFD47A;
+
+  --font-sora: 'Sora', sans-serif;
+  --font-outfit: 'Outfit', sans-serif;
+
+  --text-xs: 0.875rem;
+  /* Upgraded from 12px to 14px */
+  --text-sm: 1rem;
+  /* Upgraded from 14px to 16px */
+  --text-base: 1.125rem;
+  /* Upgraded from 16px to 18px */
+  --text-lg: 1.25rem;
+  /* Upgraded from 18px to 20px */
+  --text-xl: 1.5rem;
+  /* Upgraded from 20px to 24px */
+  --text-2xl: 1.875rem;
+  /* Upgraded from 24px to 30px */
+  --text-3xl: 2.25rem;
+  /* Upgraded from 30px to 36px */
+  --text-4xl: 3rem;
+  /* Upgraded from 36px to 48px */
+  --text-5xl: 3.75rem;
+  /* Upgraded from 48px to 60px */
+}
+
+@variant dark (&:where(.dark, .dark *));
+
+/* Custom Global Styles */
+html,
+body {
+  font-family: var(--font-outfit);
+  scroll-behavior: smooth;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-sora);
+}
+
+/* Glassmorphism Styles */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.dark .glass-panel {
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(11, 46, 89, 0.05);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dark .glass-card {
+  background: rgba(30, 41, 59, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+}
+
+.glass-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 107, 0, 0.3);
+  box-shadow: 0 12px 40px 0 rgba(255, 107, 0, 0.1);
+}
+
+.dark .glass-card:hover {
+  border-color: rgba(255, 107, 0, 0.4);
+  box-shadow: 0 12px 40px 0 rgba(255, 107, 0, 0.15);
+}
+
+/* Gradient Mesh Backgrounds */
+.gradient-mesh {
+  background-color: #f8fafc;
+  background-image:
+    radial-gradient(at 0% 0%, rgba(11, 46, 89, 0.05) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(255, 107, 0, 0.05) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(255, 200, 87, 0.05) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, rgba(11, 46, 89, 0.05) 0px, transparent 50%);
+}
+
+.dark .gradient-mesh {
+  background-color: #0f172a;
+  background-image:
+    radial-gradient(at 0% 0%, rgba(11, 46, 89, 0.2) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(255, 107, 0, 0.15) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(255, 200, 87, 0.1) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, rgba(11, 46, 89, 0.2) 0px, transparent 50%);
+}
+
+.hero-gradient {
+  background: linear-gradient(135deg, rgba(11, 46, 89, 0.08) 0%, rgba(255, 107, 0, 0.05) 50%, rgba(255, 200, 87, 0.03) 100%);
+}
+
+.dark .hero-gradient {
+  background: linear-gradient(135deg, rgba(7, 29, 58, 0.8) 0%, rgba(15, 23, 42, 0.95) 50%, rgba(30, 41, 59, 0.7) 100%);
+}
+
+/* Scrollbar customization */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #1e293b;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #475569;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+/* Custom Utilities */
+.text-gradient {
+  background: linear-gradient(to right, #0B2E59, #FF6B00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.dark .text-gradient {
+  background: linear-gradient(to right, #3b82f6, #ff8933);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-secondary {
+  background: linear-gradient(to right, #FF6B00, #FFC857);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.border-gradient {
+  border: 1px solid transparent;
+  background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), linear-gradient(135deg, #0B2E59 0%, #FF6B00 100%);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}
+
+.dark border-gradient {
+  background-image: linear-gradient(rgba(15, 23, 42, 0), rgba(15, 23, 42, 0)), linear-gradient(135deg, #3b82f6 0%, #ff8933 100%);
+}
+
+/* ─── Shimmer Effect ─────────────────────────────────────────────────────── */
+@keyframes shimmer-sweep {
+  0% {
+    background-position: -100% center;
+  }
+
+  22% {
+    background-position: 100% center;
+  }
+
+  100% {
+    background-position: 100% center;
+  }
+}
+
+.hero-badge-shimmer {
+  position: relative;
+  overflow: hidden;
+  /* Layered gradient: brand tint base + moving shimmer strip */
+  background: linear-gradient(105deg,
+      rgba(11, 46, 89, 0.08) 0%,
+      rgba(255, 107, 0, 0.08) 40%,
+      rgba(255, 200, 87, 0.08) 100%);
+  background-size: 200% auto;
+  border: 1px solid rgba(255, 107, 0, 0.25);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08) inset,
+    0 2px 8px rgba(11, 46, 89, 0.08);
+}
+
+/* The moving shimmer layer via a pseudo element */
+.hero-badge-shimmer::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg,
+      transparent 25%,
+      rgba(255, 255, 255, 0.55) 45%,
+      rgba(255, 200, 87, 0.3) 50%,
+      rgba(255, 255, 255, 0.55) 55%,
+      transparent 75%);
+  background-size: 200% 100%;
+  animation: shimmer-sweep 11s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.dark .hero-badge-shimmer {
+  background: linear-gradient(105deg,
+      rgba(11, 46, 89, 0.4) 0%,
+      rgba(255, 107, 0, 0.2) 50%,
+      rgba(255, 200, 87, 0.15) 100%);
+  border-color: rgba(255, 107, 0, 0.35);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.05) inset,
+    0 2px 12px rgba(255, 107, 0, 0.12);
+}
+
+.dark .hero-badge-shimmer::before {
+  background: linear-gradient(105deg,
+      transparent 25%,
+      rgba(255, 255, 255, 0.18) 45%,
+      rgba(255, 200, 87, 0.22) 50%,
+      rgba(255, 255, 255, 0.18) 55%,
+      transparent 75%);
+  background-size: 200% 100%;
+}
